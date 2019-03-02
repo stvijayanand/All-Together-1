@@ -1,4 +1,4 @@
-### Instructions
+### Instructions ##
 
 For this exercise, imagine that you're building a section of a simple video game
 website where we should be able to add users and display users, along with the
