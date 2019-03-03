@@ -30,3 +30,7 @@
     transform: rotate(360deg);
   }
 }
+
+.ActionButton{
+  font-size: 12px;
+}
