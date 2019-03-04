@@ -15,14 +15,43 @@ class AddUserForm extends Component{
         const name = target.name;
         const value = target.value;
 
+        const {users} = this.props;
+        if(name === 'username'){
+            this.setState({
+                isError: false        
+            });
+
+            const usersMatched = users.filter(user => user.username === value);
+            if(usersMatched.length > 0){
+                this.setState({
+                    isError: true        
+                });
+                return;
+            }
+        }
+
         this.setState({
             [name]: value
         });
     }
 
     onAddUser = (event) => {
-        const {onAdd} = this.props;
+        event.preventDefault();
+
+        const {users, onAdd} = this.props;
         const {firstName, lastName, username, } = this.state;
+        const usersMatched = users.filter(user => user.username === username);
+
+        this.setState({
+            isError: false        
+        });
+        if(usersMatched.length > 0){
+            this.setState({
+                isError: true        
+            });
+            return;
+        }
+
         const user = {
             firstName: firstName,
             lastName: lastName,
@@ -30,7 +59,6 @@ class AddUserForm extends Component{
             games: 0
         }
 
-        event.preventDefault();
         onAdd(user);
     }
 

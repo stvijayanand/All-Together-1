@@ -35,7 +35,9 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
 
-        <AddUserForm onAdd={this.addUser}></AddUserForm>
+        <AddUserForm 
+          users={users}
+          onAdd={this.addUser}></AddUserForm>
 
         <PlayersList users={users}></PlayersList>
       </div>
