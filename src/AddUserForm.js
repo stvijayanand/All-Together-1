@@ -1,7 +1,13 @@
 import React, {Component} from "react"
 import ErrorMessage from "./ErrorMessage";
+import PropTypes from "prop-types"
 
 class AddUserForm extends Component{
+
+    static propTypes = {
+        users: PropTypes.array.isRequired,
+        onAdd: PropTypes.func.isRequired
+    }
 
     state = {
         firstName: '',

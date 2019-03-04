@@ -5,7 +5,7 @@ const Player = props => {
     const { username, games } = props;
 
     return (
-    <li key={username}>{username} has played {games} games.</li>
+    <li>{username} has played {games} games.</li>
     );
 }
 

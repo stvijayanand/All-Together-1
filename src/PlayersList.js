@@ -33,6 +33,7 @@ class PlayersList extends Component{
                     {users.map(user => {
                         const games = (isShowGames) ? user.games.toString() : starredGames;
                         return (<Player 
+                            key={user.username}
                             username={user.username}
                             games={games}></Player>);
                     }
